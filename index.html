@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>
+            <button id="menu-toggle" class="menu-toggle">
+              <i class="fas fa-bars"></i></button
+            >Lokesh Dashboard
+          </h2>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a href="#" class="dashboardtitle"
+                ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chart-bar"></i> Reports</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-users"></i> Users</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main-content">
+        <header class="header">
+          <div class="header-left">
+            <h1>Dashboard</h1>
+            <nav class="header-nav">
+              <a href="#post">Posts</a>
+              <a href="#weather">Weather</a>
+              <a href="#chart">Chart</a>
+            </nav>
+          </div>
+          <div class="header-right">
+            <button id="theme-toggle">
+              <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+            <button id="open-modal">
+              <i class="fas fa-plus-circle"></i> Add New Data
+            </button>
+            <button id="refresh-data">
+              <i class="fas fa-sync-alt"></i> Refresh Data
+            </button>
+          </div>
+        </header>
+
+        <section class="postData" id="post">
+          <h2>Post Data</h2>
+          <div id="data-display" class="data-section"></div>
+        </section>
+
+        <div id="weather"></div>
+        <div id="weatherDisplay">
+          <h2>Weather Data</h2>
+          <div id="weather-display" class="weather-container"></div>
+          <div id="currentWeather"></div>
+          <canvas id="weatherChart" width="400" height="200"></canvas>
+          <div id="chart"></div>
+        </div>
+
+        <div></div>
+        <section class="chart-section">
+          <h2>Chart Data</h2>
+          <canvas id="dataChart"></canvas>
+        </section>
+      </div>
+    </div>
+
+    <div id="dataModal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <form id="data-form">
+          <h3>Add New Data</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
