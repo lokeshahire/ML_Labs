@@ -287,3 +287,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const closeNav = document.getElementById("close-nav");
+  const mobileNav = document.getElementById("mobile-nav");
+  const overlay = document.getElementById("overlay");
+
+  // Open the mobile navigation
+  hamburger.addEventListener("click", () => {
+    mobileNav.classList.add("active");
+    overlay.classList.add("show");
+  });
+
+  // Close the mobile navigation
+  closeNav.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+    overlay.classList.remove("show");
+  });
+
+  // Close the mobile navigation if the overlay is clicked
+  overlay.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+    overlay.classList.remove("show");
+  });
+});
