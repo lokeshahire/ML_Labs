@@ -125,14 +125,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       dataDisplay.innerHTML = "";
 
-      data.slice(0, 9).forEach((entry) => {
+      const shuffledData = data.sort(() => Math.random() - 0.5);
+
+      shuffledData.slice(0, 9).forEach((entry) => {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-                    <h3>${entry.title}</h3>
-                    <p><strong>Body:</strong> ${entry.body}</p>
-                    <p><strong>Post ID:</strong> ${entry.id}</p>
-                `;
+          <h3>${entry.title}</h3>
+          <p><strong>Body:</strong> ${entry.body}</p>
+         
+        `;
         dataDisplay.appendChild(card);
       });
     } catch (error) {
@@ -293,19 +295,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.getElementById("mobile-nav");
   const overlay = document.getElementById("overlay");
 
-  // Open the mobile navigation
   hamburger.addEventListener("click", () => {
     mobileNav.classList.add("active");
     overlay.classList.add("show");
   });
 
-  // Close the mobile navigation
   closeNav.addEventListener("click", () => {
     mobileNav.classList.remove("active");
     overlay.classList.remove("show");
   });
 
-  // Close the mobile navigation if the overlay is clicked
   overlay.addEventListener("click", () => {
     mobileNav.classList.remove("active");
     overlay.classList.remove("show");
