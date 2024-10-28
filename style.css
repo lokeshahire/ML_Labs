@@ -13,6 +13,7 @@ body {
   color: #333;
   transition: background-color 0.5s;
 }
+
 a {
   text-decoration: none;
 }
@@ -334,6 +335,13 @@ input[type="email"]:focus {
 body.dark-mode {
   background-color: #181818;
   color: white;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: white;
+  color: #181818;
+  transition: background-color 3s ease;
 }
 
 body.dark-mode .sidebar {
